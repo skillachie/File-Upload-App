@@ -1,10 +1,14 @@
 Pdfview::Application.routes.draw do
+  
+ #Authentication via devise
+    devise_for :users
+
   #get "pages/home"
 
   #get "users/home"
      match '/home' => 'pages#home'
      match '/library' => 'pages#library'
-     match '/users/profile' => 'users#profile'
+     #match '/users/profile' => 'users#profile'
      match '/signup' => 'pages#signup'
      root :to => 'pages#home'
   # The priority is based upon order of creation:

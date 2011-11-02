@@ -4,7 +4,8 @@ gem 'rails', '3.1.0'
 gem 'execjs'
 gem 'therubyracer'
 gem 'poppler', '1.0.3'
-gem 'twitter-bootstrap-rails'
+#gem 'twitter-bootstrap-rails'
+gem 'devise'
 
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
