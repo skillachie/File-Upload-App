@@ -5,6 +5,7 @@ Pdfview::Application.routes.draw do
      match '/home' => 'pages#home'
      match '/library' => 'pages#library'
      match '/users/profile' => 'users#profile'
+     match '/signup' => 'pages#signup'
      root :to => 'pages#home'
   # The priority is based upon order of creation:
   # first created -> highest priority.
