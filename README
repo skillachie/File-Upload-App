@@ -2,6 +2,7 @@
 
 My first ruby and rails application from scratch. This application uploads filesfrom a user and saves it on a server. App currently uses:
 
-1. Twitter Bootstrap (http://twitter.github.com/bootstrap/)
+1. Twitter Bootstrap for UI etc(http://twitter.github.com/bootstrap/)
+2. Devise for authentication (https://github.com/plataformatec/devise)
 2. Inprogress ....:)
 

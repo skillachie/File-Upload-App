@@ -23,8 +23,13 @@
             <li><a href="#contact">Contact</a></li>
           </ul>
          	<ul class="nav secondary-nav">
-                <li><a href="#">Login</a></li>
-                <li><a href="#">Sign Up</a></li>
+                <% if signed_in? %>
+		<li><p>Signed in as <%= current_user.email %></p></li>
+		<li><%= link_to "Sign Out", destroy_user_session_path,:method=>	:delete %></li>
+		<% else %>
+                <li><%=link_to "Sign In",new_user_session_path%></li>
+		<li><%=link_to "Sign Up",new_user_registration_path%></li>
+		<% end %>
                 </ul>
         </div>
       </div>
