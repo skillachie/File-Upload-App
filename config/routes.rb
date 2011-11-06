@@ -1,15 +1,20 @@
 Pdfview::Application.routes.draw do
+#used to keep devise logic seperate from custom user controller
+#devise_for :users, :path_prefix => 'd'
+devise_for :users 
+resources :users
   
- #Authentication via devise
-    devise_for :users
+#  get "user/index"
+# get "user/show"
 
+ #Authentication via devise
   #get "pages/home"
 
   #get "users/home"
      match '/home' => 'pages#home'
      match '/library' => 'pages#library'
      #match '/users/profile' => 'users#profile'
-     match '/signup' => 'pages#signup'
+#     match '/signup' => 'pages#signup'
      root :to => 'pages#home'
   # The priority is based upon order of creation:
   # first created -> highest priority.
