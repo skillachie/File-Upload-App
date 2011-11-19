@@ -1,5 +1,5 @@
-<h1>Uploads#index</h1>
-<p> Add pagination </p>
+<%# <h1>Uploads#index</h1>
+<p> Add pagination </p> %>
 
 <% if @uploads.blank? %>
 
@@ -9,8 +9,11 @@
 
 <% else %>
 
+<%= link_to 'New File', new_upload_path, :class =>'button' %> 
 
-<%= link_to 'New File', new_upload_path, :class =>'button' %>
+<br/>
+
+<br />
 
  <table class="bordered-tables zebra-striped">
    <thead>
@@ -19,6 +22,7 @@
       <th>Size</th>
       <th>Type</th>
       <th>Actions</th>
+      <th> Test</th>
     </tr>
 <% @uploads.each do |up| %>
 	</thead>
@@ -27,12 +31,12 @@
 		<td><%= up.uploaded_file_size =%></td>
 		<td><%= up.uploaded_content_type %></td>
 		<td>
-		  <%= link_to 'Remove', upload_path(up), :method => :delete, :confirm => "Are You Sure?" %></td>
+		  <%= link_to 'Remove', upload_path(up), :method => :delete, :confirm => "Are You Sure?" %>| <%= link_to 'Download', download_path(up) %></td>
+<td><%= url_for(up) =%></td>
+
 </tr>
 <% end %>
 </table>
 
 <% end %>
-
-
 

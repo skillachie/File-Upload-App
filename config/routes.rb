@@ -5,7 +5,7 @@ Pdfview::Application.routes.draw do
 devise_for :users 
 resources :users
 resources :uploads
-  
+match 'download/:id' =>  'uploads#download', :as => :download
 #  get "user/index"
 # get "user/show"
 

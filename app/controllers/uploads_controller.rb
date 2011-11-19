@@ -21,6 +21,21 @@ class UploadsController < ApplicationController
 		render :action => 'new'
 	end
  end
-  
+
+ def destroy
+  @upload = Upload.find(params[:id])
+  @upload.destroy
+  flash[:notice] = "Sucessfully deleted your file"
+  redirect_to uploads_path
+ end
+
+
+ def download
+    @upload = Upload.find(params[:id])
+    send_file(@upload)
+    flash[:notice] = "Your file has been downloaded"
+    redirect_to uploads_path 
+ end
+
 
 end

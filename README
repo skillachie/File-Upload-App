@@ -1,8 +1,24 @@
 == File Upload Application
 
-My first ruby and rails application from scratch. This application uploads filesfrom a user and saves it on a server. App currently uses:
+My first ruby and rails application from scratch. This application uploads filesfrom a user and saves it on a server. 
+
+User
+* Will be able to upload, download and delete there files
+
+Admin
+*Able to see all users and delete users if required
+
+App currently uses:
 
 1. Twitter Bootstrap for UI etc(http://twitter.github.com/bootstrap/)
 2. Devise for authentication (https://github.com/plataformatec/devise)
-2. Inprogress ....:)
+3. Paperclip for handling uploads
+4.Annotate for detailed model info
 
+I am still learning, so if you happen to stop by here. Please feel free to make suggestions, comments etc. Actively seeking a ruby on rails mentor, or buddy to learn with and bounce questions off every now and again.
+
+
+TODO
+** Finish download file
+**Write some tests
+**Other fixes
