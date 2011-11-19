@@ -1,10 +1,10 @@
-<%= form_for(@uploads, :html => { :multipart => true }) do |form| %>
+<%= form_for(@upload, :html => { :multipart => true }) do |form| %>
  <form>
 <fieldset>
 <div class="clearfix">
          <label for="fileInput">File input</label>
  <div class="input">
-          <%= form.file_field :book_upload %>
+          <%= form.file_field :uploaded %>
 </div>
 
 
@@ -15,4 +15,4 @@
 
 </fieldset>
 </form>
-<% end %
+<% end %>

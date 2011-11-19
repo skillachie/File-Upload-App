@@ -1,4 +1,5 @@
 <h1>Uploads#index</h1>
+<p> Add pagination </p>
 
 <% if @uploads.blank? %>
 
@@ -9,6 +10,7 @@
 <% else %>
 
 
+<%= link_to 'New File', new_upload_path, :class =>'button' %>
 
  <table class="bordered-tables zebra-striped">
    <thead>
@@ -19,7 +21,7 @@
       <th>Actions</th>
     </tr>
 <% @uploads.each do |up| %>
-i	</thead>
+	</thead>
 	  <tbody>
 	      <td><%= up.uploaded_file_name =%></td>
 		<td><%= up.uploaded_file_size =%></td>
@@ -29,7 +31,6 @@ i	</thead>
 </tr>
 <% end %>
 </table>
-<%= will_paginate(@uploads) %>
 
 <% end %>
 
