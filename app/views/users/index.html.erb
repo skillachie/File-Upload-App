@@ -13,8 +13,8 @@
 	<li>
 		<%= link_to user.email, user %>
 		<% if current_user.admin? %>
-		| <%= link_to "Delete",user :confirm => "Are you sure?", :method => :delete %> 
-
+		| <%= link_to "Delete",user, :confirm => "Are you sure?", :method => :delete %> 
+ 
 	<% end %>
 	</li>
 <% end %>
