@@ -1,0 +1,37 @@
+<h1>Uploads#index</h1>
+
+<% if @uploads.blank? %>
+
+<p> Upload your files :) </p>
+
+<%= link_to 'New File', new_upload_path, :class =>'button' %>
+
+<% else %>
+
+
+
+ <table class="bordered-tables zebra-striped">
+   <thead>
+   <tr>
+      <th>File Name</th>
+      <th>Size</th>
+      <th>Type</th>
+      <th>Actions</th>
+    </tr>
+<% @uploads.each do |up| %>
+i	</thead>
+	  <tbody>
+	      <td><%= up.uploaded_file_name =%></td>
+		<td><%= up.uploaded_file_size =%></td>
+		<td><%= up.uploaded_content_type %></td>
+		<td>
+		  <%= link_to 'Remove', upload_path(up), :method => :delete, :confirm => "Are You Sure?" %></td>
+</tr>
+<% end %>
+</table>
+<%= will_paginate(@uploads) %>
+
+<% end %>
+
+
+

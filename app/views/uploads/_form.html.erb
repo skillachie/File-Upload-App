@@ -1,0 +1,18 @@
+<%= form_for(@uploads, :html => { :multipart => true }) do |form| %>
+ <form>
+<fieldset>
+<div class="clearfix">
+         <label for="fileInput">File input</label>
+ <div class="input">
+          <%= form.file_field :book_upload %>
+</div>
+
+
+ <div class="actions">
+           <input type="submit" class="btn primary" <%= form.submit "Upload" %> &nbsp;<button type="reset" class="btn">Cancel</button>
+          </div>
+
+
+</fieldset>
+</form>
+<% end %

@@ -6,7 +6,9 @@ gem 'therubyracer'
 gem 'poppler', '1.0.3'
 #gem 'twitter-bootstrap-rails'
 gem 'devise'
-
+gem 'paperclip'
+gem 'will_paginate'
+gem 'annotate', '2.4.1.beta1'
 # Bundle edge Rails instead:
 # gem 'rails',     :git => 'git://github.com/rails/rails.git'
 

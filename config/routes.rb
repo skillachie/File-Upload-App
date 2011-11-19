@@ -1,8 +1,10 @@
 Pdfview::Application.routes.draw do
+
 #used to keep devise logic seperate from custom user controller
 #devise_for :users, :path_prefix => 'd'
 devise_for :users 
 resources :users
+resources :uploads
   
 #  get "user/index"
 # get "user/show"
