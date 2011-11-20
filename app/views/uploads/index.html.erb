@@ -23,6 +23,7 @@
       <th>Type</th>
       <th>Actions</th>
       <th> Test</th>
+      <th> Content Type</th>
     </tr>
 <% @uploads.each do |up| %>
 	</thead>
@@ -33,6 +34,7 @@
 		<td>
 		  <%= link_to 'Remove', upload_path(up), :method => :delete, :confirm => "Are You Sure?" %>| <%= link_to 'Download', download_path(up) %></td>
 <td><%= url_for(up) =%></td>
+<td><%= up.uploaded.path =%></td>
 
 </tr>
 <% end %>

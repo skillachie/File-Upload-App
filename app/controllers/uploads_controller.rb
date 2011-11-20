@@ -31,10 +31,17 @@ class UploadsController < ApplicationController
 
 
  def download
-    @upload = Upload.find(params[:id])
-    send_file(@upload)
+    upload = Upload.find(params[:id])
+    #location = "#{Rails.root}" 
+    
+    #type = @upload.uploaded_content_type
+   # send_file  (@upload)
+#send_file('public/test_file.pdf', :filename => 'Test File', :type => 'application/pdf', :disposition => 'attachment', :streaming => 'true', :buffer_size => '4096')
+    send_file  upload.uploaded.path,
+		:filename => upload.uploaded_file_name,
+                :type => upload.uploaded_content_type,
+		:disposition => 'attachment'
     flash[:notice] = "Your file has been downloaded"
-    redirect_to uploads_path 
  end
 
 
