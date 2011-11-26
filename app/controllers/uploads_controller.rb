@@ -2,9 +2,14 @@ class UploadsController < ApplicationController
 
 
   def index
+	if signed_in? and current_user.admin?
   
-   @uploads = Upload.all 
-
+	  	 @uploads = Upload.all 
+	elsif signed_in? 
+		@uploads = current_user.uploads
+	else
+		redirect_to(root_path)
+	end
   end
 
   def new
@@ -12,7 +17,7 @@ class UploadsController < ApplicationController
   end
 
  def create
-  @upload = Upload.new(params[:upload])
+  @upload = current_user.uploads.create(params[:upload])
  	if @upload.save
 		flash[:notice] = "your file has been uploaded"
 		redirect_to uploads_path
@@ -34,7 +39,6 @@ class UploadsController < ApplicationController
     upload = Upload.find(params[:id])
     #location = "#{Rails.root}" 
     
-    #type = @upload.uploaded_content_type
    # send_file  (@upload)
 #send_file('public/test_file.pdf', :filename => 'Test File', :type => 'application/pdf', :disposition => 'attachment', :streaming => 'true', :buffer_size => '4096')
     send_file  upload.uploaded.path,
