@@ -1,5 +1,8 @@
 ﻿== File Upload Application
 
+*Added updated instructions and added seed to make it easier for users learning rails based on emails received
+
+
 My first ruby and rails application from scratch. This application uploads filesfrom a user and saves it on a server. 
 
 User
@@ -7,6 +10,27 @@ User
 
 Admin
 *Able to see all users and delete users if required
+
+Install all gems
+
+'''
+bundle install
+'''
+
+Setup database
+
+'''
+RAILS_ENV=development rake db:migrate
+'''
+
+Create admin user
+
+'''
+RAILS_ENV=development rake db:seed
+'''
+
+
+
 
 App currently uses:
 
